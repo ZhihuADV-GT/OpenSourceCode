@@ -1,0 +1,35 @@
+# ── Python ────────────────────────────────────
+__pycache__/
+*.pyc
+*.egg-info/
+
+# ── Node ──────────────────────────────────────
+node_modules/
+package-lock.json
+
+# ── Environment & credentials ────────────────
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/access_secret
+
+# ── SSH deployment keys ──────────────────────
+.ssh/
+
+# ── IDE / editor ─────────────────────────────
+.qoder/
+.vscode/
+
+# ── Build output ─────────────────────────────
+Frontend/dist/
+
+# ── AI runtime-generated data ────────────────
+Backend/article_lib/ai_*.json
+Backend/article_lib/dynamic_cards.json
+
+# ── OS files ─────────────────────────────────
+.DS_Store
+Thumbs.db

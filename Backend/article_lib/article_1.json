@@ -1,0 +1,52 @@
+{
+  "id": "article_1",
+  "title": "测试文章",
+  "content": "这是一篇测试文章的开头部分。\n观点卡开头，这里是观点卡的正文内容，用来测试观点卡的划线判定逻辑。观点卡结尾。\n中间过渡文字。\n漏洞卡开头，这里是漏洞卡的正文内容，用来测试漏洞卡的划线判定逻辑。漏洞卡结尾。\n又是过渡文字。\n修辞卡开头，这里是修辞卡的正文内容，用来测试修辞卡的划线判定逻辑。修辞卡结尾。\n继续过渡。\n情绪卡开头，这里是情绪卡的正文内容，用来测试情绪卡的划线判定逻辑。情绪卡结尾。\n测试文章的结尾部分。",
+  "target_value": 47,
+  "linespots": [
+    {
+      "card_id": "article_1_card_1",
+      "start": 15,
+      "end": 54,
+      "start_context": "观点卡开头",
+      "end_context": "点卡结尾。",
+      "card_type": "观点",
+      "attribute_value": 15,
+      "attribute_x": 33,
+      "attribute_y": 35
+    },
+    {
+      "card_id": "article_1_card_2",
+      "start": 63,
+      "end": 102,
+      "start_context": "漏洞卡开头",
+      "end_context": "洞卡结尾。",
+      "card_type": "漏洞",
+      "attribute_value": 12,
+      "attribute_x": -23,
+      "attribute_y": 22
+    },
+    {
+      "card_id": "article_1_card_3",
+      "start": 111,
+      "end": 150,
+      "start_context": "修辞卡开头",
+      "end_context": "辞卡结尾。",
+      "card_type": "修辞",
+      "attribute_value": 10,
+      "attribute_x": 1.35,
+      "attribute_y": 1.25
+    },
+    {
+      "card_id": "article_1_card_4",
+      "start": 157,
+      "end": 196,
+      "start_context": "情绪卡开头",
+      "end_context": "绪卡结尾。",
+      "card_type": "情绪",
+      "attribute_value": 10,
+      "attribute_x": 24,
+      "attribute_y": -22
+    }
+  ]
+}

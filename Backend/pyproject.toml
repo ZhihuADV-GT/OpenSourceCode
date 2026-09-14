@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zhihu-article-game"
+version = "0.1.0"
+description = "Terminal-based article matching game"
+requires-python = ">=3.10"
+dependencies = [
+	"fastapi>=0.115.0",
+	"uvicorn[standard]>=0.30.0",
+]
+
+[tool.setuptools]
+packages = ["game", "game.api", "game.numerics", "game.preprocess"]

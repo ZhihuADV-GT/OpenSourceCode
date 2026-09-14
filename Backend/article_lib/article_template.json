@@ -1,0 +1,52 @@
+{
+  "id": "article_xxx",
+  "title": "文章标题",
+  "content": "文章正文内容...",
+  "target_value": 50,
+  "linespots": [
+    {
+      "card_id": "article_xxx_card_1",
+      "start": 0,
+      "end": 10,
+      "start_context": "起始文本",
+      "end_context": "结束文本",
+      "card_type": "观点",
+      "attribute_value": 15,
+      "attribute_x": 32,
+      "attribute_y": 35
+    },
+    {
+      "card_id": "article_xxx_card_2",
+      "start": 20,
+      "end": 40,
+      "start_context": "起始文本",
+      "end_context": "结束文本",
+      "card_type": "漏洞",
+      "attribute_value": 12,
+      "attribute_x": -25,
+      "attribute_y": 22
+    },
+    {
+      "card_id": "article_xxx_card_3",
+      "start": 50,
+      "end": 70,
+      "start_context": "起始文本",
+      "end_context": "结束文本",
+      "card_type": "修辞",
+      "attribute_value": 10,
+      "attribute_x": 1.5,
+      "attribute_y": 1.2
+    },
+    {
+      "card_id": "article_xxx_card_4",
+      "start": 80,
+      "end": 100,
+      "start_context": "起始文本",
+      "end_context": "结束文本",
+      "card_type": "情绪",
+      "attribute_value": 10,
+      "attribute_x": 25,
+      "attribute_y": -20
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "version": "0.7",
+  "description": "段落级模板库 · 段落骨架版（lead + claim + evidence + mechanism + closing）",
+  "templates": [
+    {
+      "template_id": "para_open",
+      "role": "开头段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["说到这事，", "关于这个问题，", "先说一个现象："],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体表现}",
+        "mechanism": "{用新表述解释成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["这是核心。", "想清楚这点后面就顺了。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "para_body_cause",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "原因类",
+      "skeleton": {
+        "lead": ["再说一点，", "另一方面，", "还有一点，"],
+        "claim": "{从卡牌提取核心原因}",
+        "evidence": "{从卡牌提取具体表现/例子}",
+        "mechanism": "{用新表述解释成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["所以{小结}。", "根子就在这。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [85, 180], "饱满": [115, 225]}
+    },
+    {
+      "template_id": "para_body_mechanism",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "机制类",
+      "skeleton": {
+        "lead": ["事实是，", "这背后的机制是，", "换句话说，"],
+        "claim": "{从卡牌提取机制名称/核心原理}",
+        "evidence": "{从卡牌提取机制的表现}",
+        "mechanism": "{用新表述展开成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["也就是说，{小结}。", "机制使然，并非偶然。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [85, 180], "饱满": [115, 225]}
+    },
+    {
+      "template_id": "para_body_phenomenon",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "现象类",
+      "skeleton": {
+        "lead": ["还有一个现象，", "值得注意的是，", "观察到的情况是，"],
+        "claim": "{从卡牌提取核心现象}",
+        "evidence": "{从卡牌提取具体例子/数据}",
+        "closing": ["这说明{小结}。", "现象背后另有深意。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "para_body_contrast",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "对比类",
+      "skeleton": {
+        "lead": ["对比来看，", "有意思的是，", "事实上，"],
+        "claim": "{从卡牌提取对比的核心观点}",
+        "evidence": "{从卡牌提取对比的具体表现}",
+        "closing": ["由此可见{小结}。", "差别就在这一线。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [85, 180], "饱满": [115, 225]}
+    },
+    {
+      "template_id": "para_body_example",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "例子类",
+      "skeleton": {
+        "lead": ["举个例子，", "比如，", "一个典型的例子是，"],
+        "claim": "{从卡牌提取例子说明的观点}",
+        "evidence": "{从卡牌提取具体例子/案例}",
+        "closing": ["这个例子说明{小结}。", "例子摆在这，不难看懂。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [85, 180], "饱满": [115, 225]}
+    },
+    {
+      "template_id": "para_body_data",
+      "role": "论述段",
+      "structure": ["通用"],
+      "content_type": "数据类",
+      "skeleton": {
+        "lead": ["数据显示，", "统计表明，", "根据数据，"],
+        "claim": "{从卡牌提取数据支撑的观点}",
+        "evidence": "{从卡牌提取具体数据/统计}",
+        "closing": ["这组数据说明{小结}。", "数字不会说谎。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [85, 180], "饱满": [115, 225]}
+    },
+    {
+      "template_id": "para_close",
+      "role": "结尾段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["说到底，", "总而言之，", "归结起来就一句："],
+        "claim": "{从卡牌提取核心结论}",
+        "closing": ["这就是结论。", "首尾呼应，就这个意思。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "refute_open",
+      "role": "破题段",
+      "structure": ["驳论"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["很多人张口就来：", "有一种流行的说法是：", "不少人认为："],
+        "claim": "{从漏洞卡提取靶子观点}",
+        "closing": ["这话听着顺，其实站不住。", "但真相并非如此。", "但这恰恰错了。"]
+      },
+      "weave_slots": ["情绪", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "refute_body_cause",
+      "role": "驳斥段",
+      "structure": ["驳论"],
+      "content_type": "原因类",
+      "skeleton": {
+        "lead": ["恰恰相反，", "可真相是——", "问题就出在这："],
+        "claim": "{从卡牌提取核心反驳观点}",
+        "evidence": "{从卡牌提取具体表现/例子}",
+        "mechanism": "{用新表述解释成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["所以{小结}，这才是关键。", "根子在此，靶子自然塌。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "refute_body_mechanism",
+      "role": "驳斥段",
+      "structure": ["驳论"],
+      "content_type": "机制类",
+      "skeleton": {
+        "lead": ["事实是，", "拆穿它，你会发现：", "真正的原因在于："],
+        "claim": "{从卡牌提取机制名称/核心原理}",
+        "evidence": "{从卡牌提取机制的表现}",
+        "mechanism": "{用新表述展开成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["换句话说，{小结}。", "机制使然，靶子站不住。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "refute_body_contrast",
+      "role": "驳斥段",
+      "structure": ["驳论"],
+      "content_type": "对比类",
+      "skeleton": {
+        "lead": ["但事实恰恰相反：", "靶子这么说，但真相是："],
+        "claim": "{从卡牌提取对比的核心观点}",
+        "evidence": "{从卡牌提取对比的具体表现}",
+        "closing": ["所以{小结}，别被带节奏。", "一线之差，别被带节奏。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 175], "饱满": [120, 220]}
+    },
+    {
+      "template_id": "refute_body_phenomenon",
+      "role": "驳斥段",
+      "structure": ["驳论"],
+      "content_type": "现象类",
+      "skeleton": {
+        "lead": ["观察到的现象是，", "事实情况是，", "实际情况表明，"],
+        "claim": "{从卡牌提取核心现象}",
+        "evidence": "{从卡牌提取具体表现}",
+        "closing": ["这说明{小结}，靶子站不住。", "现象在此，靶子站不住。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "refute_body_example",
+      "role": "驳斥段",
+      "structure": ["驳论"],
+      "content_type": "例子类",
+      "skeleton": {
+        "lead": ["举个例子，", "比如，", "一个反例是，"],
+        "claim": "{从卡牌提取例子反驳的观点}",
+        "evidence": "{从卡牌提取具体例子}",
+        "closing": ["这个例子说明{小结}，靶子错了。", "反例摆在这，靶子错了。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "refute_close",
+      "role": "立论收束段",
+      "structure": ["驳论"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["所以别再被带节奏，一句话：", "驳到底，剩下的就是：", "记住这句就够："],
+        "claim": "{从卡牌提取核心结论}",
+        "closing": ["这才是真相。", "这就是结论。"]
+      },
+      "weave_slots": ["情绪", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "parallel_open",
+      "role": "并列总起段",
+      "structure": ["并列"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["这事可从几个层面看，核心是：", "先摆结论，再分头说：", "总起来一句话："],
+        "claim": "{从卡牌提取核心观点}",
+        "closing": ["下面分两头说。", "下面展开说。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "parallel_body_general",
+      "role": "并列论述段",
+      "structure": ["并列"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["其一，", "其二，", "另一方面，", "与之对称的是，"],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体表现}",
+        "closing": ["同样的道理。", "这一头也是。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "parallel_body_cause",
+      "role": "并列论述段",
+      "structure": ["并列"],
+      "content_type": "原因类",
+      "skeleton": {
+        "lead": ["其一，", "其二，", "还有一个原因是，"],
+        "claim": "{从卡牌提取核心原因}",
+        "evidence": "{从卡牌提取具体表现}",
+        "mechanism": "{用新表述解释成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["所以{小结}。", "根子就在这。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "parallel_body_mechanism",
+      "role": "并列论述段",
+      "structure": ["并列"],
+      "content_type": "机制类",
+      "skeleton": {
+        "lead": ["其一，", "其二，", "另一个机制是，"],
+        "claim": "{从卡牌提取机制名称/核心原理}",
+        "evidence": "{从卡牌提取机制的表现}",
+        "mechanism": "{用新表述展开成因（为什么），禁止复述 evidence 原句；无独立成因则省略本槽}",
+        "closing": ["也就是说，{小结}。", "机制使然，并非偶然。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "parallel_close",
+      "role": "并列汇总段",
+      "structure": ["并列"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["几路合拢，归结为：", "综合来看，", "把这几条串起来："],
+        "claim": "{从卡牌提取核心结论}",
+        "closing": ["这就是全貌。", "合起来就是这个意思。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "prog_open",
+      "role": "递进起始段",
+      "structure": ["递进"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["表面上看，问题是这样的：", "先说最浅的一层：", "第一层，"],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体表现}",
+        "closing": ["这是最表层。", "这是起点。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "prog_body_deepen",
+      "role": "递进推进段",
+      "structure": ["递进"],
+      "content_type": "机制类",
+      "skeleton": {
+        "lead": ["再往下一层，", "不止如此，", "更进一步，"],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体表现}",
+        "mechanism": "{用新表述揭示深层成因，禁止复述 evidence 原句}",
+        "closing": ["这才是更深的层面。", "这比上一层更深。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "prog_body_contrast",
+      "role": "递进推进段",
+      "structure": ["递进"],
+      "content_type": "对比类",
+      "skeleton": {
+        "lead": ["不止如此，", "挖到根上，"],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取对比表现}",
+        "closing": ["这比上一层更深。", "这才是根本。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 175], "饱满": [120, 220]}
+    },
+    {
+      "template_id": "prog_body_phenomenon",
+      "role": "递进推进段",
+      "structure": ["递进"],
+      "content_type": "现象类",
+      "skeleton": {
+        "lead": ["再往下一层，", "更深一层的现象是，"],
+        "claim": "{从卡牌提取核心现象}",
+        "evidence": "{从卡牌提取具体表现}",
+        "closing": ["这比上一层更深。", "这是更深层的现象。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "prog_body_example",
+      "role": "递进推进段",
+      "structure": ["递进"],
+      "content_type": "例子类",
+      "skeleton": {
+        "lead": ["举个例子，", "比如，"],
+        "claim": "{从卡牌提取例子说明的观点}",
+        "evidence": "{从卡牌提取具体例子}",
+        "closing": ["这个例子说明{小结}，更深一层。", "例子到此，更深一层。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 185], "饱满": [120, 230]}
+    },
+    {
+      "template_id": "prog_close",
+      "role": "递进到顶段",
+      "structure": ["递进"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["层层递进，归结为：", "推到顶点，就一句话：", "挖到底，剩下的就是："],
+        "claim": "{从卡牌提取核心结论}",
+        "closing": ["这就是答案。", "这才是根子。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "total_open",
+      "role": "总起段",
+      "structure": ["总-分-总", "总-分"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["关于这事，核心就一句：", "先把结论摆这儿——", "开门见山："],
+        "claim": "{从卡牌提取核心观点}",
+        "closing": ["想清楚这点后面就顺了。", "这是核心。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "total_close",
+      "role": "回扣段",
+      "structure": ["总-分-总", "分-总"],
+      "content_type": "观点类",
+      "skeleton": {
+        "lead": ["绕回开头那句：", "说到底，还是：", "综上，意义落在："],
+        "claim": "{从卡牌提取核心结论}",
+        "closing": ["首尾呼应，就这个意思。", "这就是结论。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [50, 110], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "emotion_open",
+      "role": "情绪主导开头段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "tone": "emotional",
+      "skeleton": {
+        "lead": ["说到这个，我深有感触：", "不知道你有没有过这种感受：", "说个真实的经历，"],
+        "claim": "{从卡牌提取核心观点}",
+        "closing": ["这种感觉，懂的都懂。", "这就是真实感受。"]
+      },
+      "weave_slots": ["情绪", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "emotion_body",
+      "role": "情绪主导论述段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "tone": "emotional",
+      "skeleton": {
+        "lead": ["说到这，", "其实吧，", "说实话，"],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体表现}",
+        "closing": ["这种感觉，你懂。", "就是这样。"]
+      },
+      "weave_slots": ["情绪", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 175], "饱满": [120, 220]}
+    },
+    {
+      "template_id": "critique_open",
+      "role": "批判主导开头段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "tone": "critical",
+      "skeleton": {
+        "lead": ["先泼盆冷水：", "别急着认同，", "先质疑一下："],
+        "claim": "{从卡牌提取核心观点}",
+        "closing": ["这里头有问题。", "这事没那么简单。"]
+      },
+      "weave_slots": ["漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [55, 120], "标准": [80, 165], "饱满": [110, 210]}
+    },
+    {
+      "template_id": "critique_body",
+      "role": "批判主导论述段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "tone": "critical",
+      "skeleton": {
+        "lead": ["问题是，", "但这里头有个漏洞：", "质疑一下："],
+        "claim": "{从卡牌提取核心观点}",
+        "evidence": "{从卡牌提取具体问题}",
+        "closing": ["这里头有问题。", "这事值得怀疑。"]
+      },
+      "weave_slots": ["漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 120], "标准": [90, 175], "饱满": [120, 220]}
+    },
+    {
+      "template_id": "single_card",
+      "role": "单卡成段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "edge_case": "single",
+      "skeleton": {
+        "lead": [],
+        "claim": "{直接使用卡牌原文}",
+        "closing": []
+      },
+      "weave_slots": [],
+      "length_levels": {"精简": "claim", "标准": "claim", "饱满": "claim"},
+      "word_range": {"精简": [15, 60], "标准": [15, 60], "饱满": [15, 60]}
+    },
+    {
+      "template_id": "multi_card",
+      "role": "多卡合段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "edge_case": "multi",
+      "skeleton": {
+        "lead": ["综合来看，", "把这些合在一起，"],
+        "claim": "{从多张卡牌提取核心观点}",
+        "evidence": "{从多张卡牌提取具体表现}",
+        "closing": ["合起来看，{小结}。", "几条并一处，意思就清楚了。"]
+      },
+      "weave_slots": ["情绪", "漏洞", "修辞"],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "+evidence", "饱满": "+mechanism"},
+      "word_range": {"精简": [60, 100], "标准": [80, 150], "饱满": [100, 180]}
+    },
+    {
+      "template_id": "transition",
+      "role": "过渡段",
+      "structure": ["通用"],
+      "content_type": "观点类",
+      "edge_case": "transition",
+      "skeleton": {
+        "lead": ["话说回来，", "换个角度看，", "再来说说另一方面，"],
+        "claim": "{过渡性观点}",
+        "closing": ["这就引出了下一个问题。", "接下来要说的是。"]
+      },
+      "weave_slots": [],
+      "length_levels": {"精简": "lead+claim+closing", "标准": "lead+claim+closing", "饱满": "lead+claim+closing"},
+      "word_range": {"精简": [30, 70], "标准": [30, 70], "饱满": [30, 70]}
+    }
+  ]
+}
